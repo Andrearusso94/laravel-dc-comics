@@ -11,7 +11,7 @@
                     </li>
                     <li class="nav-item active">
 
-                        <a class="nav-link text-dark" href="{{route('products')}}">Comics Products</a>
+                        <a class="nav-link text-dark" href="{{route('products.index')}}">My Products</a>
                     </li>
 
                 </ul>

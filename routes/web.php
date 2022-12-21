@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Guest\PageController;
-use App\Http\Controllers\ProductController;
+//use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductController as ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,13 +18,21 @@ use App\Http\Controllers\ProductController;
 
 Route::get('/', [PageController::class, 'index'])->name('home');
 
+//Route::get('/products', [ProductController::class, 'index'])->name('admin.products.index');
+
+// Route::resource('products', ProductController::class);
+
 /*Route::get('/products', function () {
     return ('products');
 })->name('products');*/
 
-Route::resource('products', ProductController::class);
+
 
 /*Route::get('/new', function () {
     return view('new');
 })->name('new');
 */
+
+
+//route CRUD
+Route::resource('admin/products', ProductController::class);
