@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+//use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+//use App\Http\Requests\CreateProductRequest;
 
 class ProductController extends Controller
 {
@@ -15,7 +17,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::orderByDesc('id')->get();
         return view('admin.products.index', compact('products'));
         //dd($products);
     }
@@ -27,7 +29,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.products.create');
     }
 
     /**
@@ -38,7 +40,19 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request)
     {
-        //
+        //dd($request->all());
+
+        $product = new Product();
+        $product->title = $request['title'];
+        $product->description = $request['description'];
+        $product->thumb = $request['thumb'];
+        $product->price = $request['price'];
+        $product->series = $request['series'];
+        $product->sale_date = $request['sale_date'];
+        $product->type = $request['type'];
+        $product->save();
+
+        return to_route('products.index');
     }
 
     /**
