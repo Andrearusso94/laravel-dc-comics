@@ -19,6 +19,9 @@ class ProductController extends Controller
     {
         $products = Product::orderByDesc('id')->get();
         return view('admin.products.index', compact('products'));
+
+
+
         //dd($products);
     }
 

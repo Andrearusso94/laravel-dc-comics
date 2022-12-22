@@ -18,5 +18,6 @@ class ProductController extends Controller
         $products = Product::all();
         return view('guest.products.index', compact('products'));
         // dd($products);
+
     }
 }
