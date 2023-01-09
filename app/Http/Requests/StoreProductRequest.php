@@ -33,4 +33,20 @@ class StoreProductRequest extends FormRequest
             'type' => 'nullable|min:5|max:20',
         ];
     }
+
+    function messages()
+    {
+        return [
+            'title.required' => 'Il titolo è obbligatorio',
+            'title.min' => 'Il titolo è di almeno :min caratteri',
+            'title.max' => 'Il titolo è al massimo di :max caratteri',
+            'thumb.max' => 'Url immagine consentito di max :max',
+            'series.min' => 'Il testo della serie de essere di almeno :min caratteri',
+            'series.max' => 'Il testo della serie de essere inferiore a :max caratteri',
+            'type.min' => 'Il tipo di fumetto deve essere almeno di :min caratteri',
+            'type.max' => 'Il tipo di fumetto deve essere inferiore a :max caratteri',
+
+
+        ];
+    }
 }
