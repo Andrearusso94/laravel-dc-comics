@@ -24,7 +24,13 @@ class StoreProductRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required|min:5|max:100',
+            'description' => 'nullable',
+            'thumb' => 'nullable|max:255',
+            'price' => 'nullable',
+            'series' => 'nullable|min:5|max:20',
+            'sale_date' => 'nullable',
+            'type' => 'nullable|min:5|max:20',
         ];
     }
 }

@@ -27,12 +27,5 @@ Route::get('/', [PageController::class, 'index'])->name('home');
 })->name('products');*/
 
 
-
-/*Route::get('/new', function () {
-    return view('new');
-})->name('new');
-*/
-
-
 //route CRUD
 Route::resource('admin/products', ProductController::class);

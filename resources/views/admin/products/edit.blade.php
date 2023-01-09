@@ -4,7 +4,7 @@
 
 <div class="container">
     <h2>Update: {{$product->title}}</h2>
-    <form action="#" method="post">
+    <form action="{{route('products.edit', $product->id)}}" method="post">
         @csrf
         @method('PUT')
         <div class="mb-3">
