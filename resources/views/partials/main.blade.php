@@ -8,7 +8,5 @@
 </section>
 
 <section>
-    <ul>
 
-    </ul>
 </section>
